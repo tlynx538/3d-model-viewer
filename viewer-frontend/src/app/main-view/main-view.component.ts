@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainViewComponent implements OnInit {
 
   constructor() { }
-
+  isOpen = false;
   ngOnInit(): void {
   }
 
