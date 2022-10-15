@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarUploadComponent } from './sidebar-upload/sidebar-upload.component';
 import { MainViewComponent } from './main-view/main-view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MainViewComponent } from './main-view/main-view.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    OverlayModule
+    OverlayModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
