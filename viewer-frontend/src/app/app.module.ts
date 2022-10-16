@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SidebarUploadComponent } from './sidebar-upload/sidebar-upload.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     OverlayModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
