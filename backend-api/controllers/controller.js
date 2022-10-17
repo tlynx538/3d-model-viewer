@@ -14,9 +14,17 @@ const allFileDetails = async(req,res) => {
 
 }
 
-const getFile = async(req,res) => {
+// const getFile = async(req,res) => {
+//     try
+//     {
+//         const result = await db('file').select('file_name').where('file_serial',req.params.file_name);
+        
+//     }
+//     catch(err)
+//     {
 
-}
+//     }
+// }
 
 const sendFile = async(req,res) => {
     console.log("Reached Route: Send File");
@@ -50,7 +58,7 @@ const sendFile = async(req,res) => {
     }
 }
 
-module.exports = {allFileDetails, getFile, sendFile};
+module.exports = {allFileDetails, sendFile};
 
 const randomStringGenerator = () => {
     return Math.random().toString(36).substring(2,7);

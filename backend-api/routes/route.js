@@ -5,7 +5,7 @@ const controller = require('../controllers/controller');
 router.get('/all',controller.allFileDetails);
 
 // retrieve 3d model
-router.get('/retrieve/:file_name',controller.getFile);
+// router.get('/retrieve/:file_name',controller.getFile);
 
 // post 3d model
 router.post('/send',controller.sendFile);
