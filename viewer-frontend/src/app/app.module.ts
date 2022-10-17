@@ -7,11 +7,13 @@ import { SidebarUploadComponent } from './sidebar-upload/sidebar-upload.componen
 import { MainViewComponent } from './main-view/main-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { RenderModelComponent } from './render-model/render-model.component';
 @NgModule({
   declarations: [
     AppComponent,
     SidebarUploadComponent,
-    MainViewComponent
+    MainViewComponent,
+    RenderModelComponent
   ],
   imports: [
     BrowserModule,
