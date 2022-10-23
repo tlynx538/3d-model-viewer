@@ -11,7 +11,7 @@ const routes: Routes = [
     path: 'upload', component:SidebarUploadComponent
   },
   {
-    path: 'render', component: RenderModelComponent
+    path: 'render/:model_name', component: RenderModelComponent
   }
 ];
 

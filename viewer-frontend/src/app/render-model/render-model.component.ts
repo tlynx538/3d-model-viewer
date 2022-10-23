@@ -3,15 +3,20 @@ import * as THREE from "three";
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
-
+import { ActivatedRoute } from '@angular/router'
+import { GetModelService } from '../get-model.service';
 @Component({
   selector: 'app-render-model',
   templateUrl: './render-model.component.html',
   styleUrls: ['./render-model.component.css']
 })
 export class RenderModelComponent implements OnInit {
+  base_url = "/assets/"
   @ViewChild('canvas') private canvasRef: ElementRef;
     //* Stage Properties
+
+   model_name;
+   loading : boolean = false;
 
     @Input() public fieldOfView: number = 1;
 
@@ -37,7 +42,7 @@ export class RenderModelComponent implements OnInit {
     private model: any;
   
     private directionalLight: THREE.DirectionalLight;
-  constructor() { }
+    constructor(private route: ActivatedRoute, public getModelFile : GetModelService) { }
 
   private animateModel() {
     if (this.model) {
@@ -72,11 +77,11 @@ export class RenderModelComponent implements OnInit {
     this.controls.update();
   };
 
-  private createScene() {
+  private createScene(path_url) {
     //* Scene
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xd4d4d8)
-    this.loaderGLTF.load('assets/robot/scene.gltf', (gltf: GLTF) => {
+    this.loaderGLTF.load(path_url, (gltf: GLTF) => {
       this.model = gltf.scene.children[0];
       console.log(this.model);
       var box = new THREE.Box3().setFromObject(this.model);
@@ -132,11 +137,14 @@ export class RenderModelComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    // get file from api and extract it to assets folder
-    // modify /render route to /render/<serial>
-    this.createScene();
-    this.startRenderingLoop();
-    this.createControls();
+    this.model_name = this.route.snapshot.paramMap.get('model_name');
+    console.log(this.model_name);
+    this.getModelFile.getFile(this.model_name).subscribe(response => {
+      console.log(this.base_url+response.file_serial);
+      this.createScene(this.base_url+response.file_serial+'/'+'scene.gltf');
+      this.startRenderingLoop();
+      this.createControls();
+    })
   }
 
 }

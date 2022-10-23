@@ -3,7 +3,7 @@
     <p class="mt-3">Please enter the model title and also click browse to upload custom 3D models (upload zip files only) (Supported File Formats: GLTF only)</p>
     <div class="row">
         <div class="col-xl-0 mt-3">
-            <input type="file" class="form-control" placeholder="Browse Models" aria-describedby="basic-addon2" (change)="onChange($event)">
+            <input type="file" class="form-control" placeholder="Browse Models" aria-describedby="basic-addon2" (change)="onChange($event)" accept=".zip,application/octet-stream,application/zip,application/x-zip,application/x-zip-compressed">
         </div>
         <div class="col mt-3">
             <!-- <input class="form-control" type="file" (change)="onChange($event)"> -->
