@@ -1,11 +1,11 @@
 let multer = require('multer');
 const util = require("util");
-const maxSize = 2 * 2048 * 2048;
+const maxSize = 2 * 4096 * 4096;
 let storage = multer.diskStorage({
-    destination: function (req, file, callback) {
+    destination: (req, file, callback) => {
       callback(null, __dirname + '/uploads');
     },
-    filename: function (req, file, callback) {
+    filename: (req, file, callback) => {
       callback(null, file.originalname);
     }
   });
