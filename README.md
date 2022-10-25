@@ -38,7 +38,7 @@ To install the packages to run the frontend type the following:
 - Now click on any of the model present on the list to render the model.
 
 ### Deployment Link
-https://5f14-103-108-58-13.in.ngrok.io/ 
+https://41c2-103-108-58-13.in.ngrok.io/
 
 
 
