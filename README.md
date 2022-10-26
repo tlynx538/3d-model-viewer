@@ -1,7 +1,7 @@
 # FABRIK 3D Model Viewer
  A Full Stack Application to view or upload 3d models.
 
-#### Completion Status: <b>Partial</b> 
+#### Completion Status: <b>Completed</b> 
 
 ### Tasks Completed
 -  Frontend
